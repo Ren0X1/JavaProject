@@ -38,9 +38,9 @@ public class Matematicas {
     }
     //Metodo que devuelve una cantidad de numeros primos pasado por parametros
     public static int[] nPrimos(int i) {
-        int[] numeros=new int[i];
+        int[] numeros=new int[i+1];
         int c=0;
-        for (int n=2;c!=i-1;n++) {
+        for (int n=2;c!=i;n++) {
             if (esPrimo(n)) {
                 numeros[c]=n;
                 c++;
