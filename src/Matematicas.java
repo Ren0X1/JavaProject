@@ -126,6 +126,8 @@ public class Matematicas {
             f=f+2;
         }
     }
+    //Metodo para conseguir el resto de una division entera
+    public static int resto (int n,int d){return n%d;}
     //Generamos un rombo con el numero de filas y un caracter pasado por parametro
     public static void rombo(int n, char c) {
         int nn=n;
