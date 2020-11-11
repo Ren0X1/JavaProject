@@ -2,8 +2,7 @@ import java.util.*;//Importamos todo el java util ya qu es una clase de utilidad
 public class Args {
     //Metodo para comprobar los numeros de parametros, el maximo s lo pasamos por parametro
     public static boolean ComprobrarLongitud(String[] argumentos,int n) {
-        if (argumentos.length!=n){return false;}//Devuelve false si no se han colocado todos los args
-        return true;//Sino devuelve true
+        return argumentos.length == n;//Comprobamos la longitud
     }
     //Con esto comprobamos si los argumentos son de tipo entero o otro tipo
     public static boolean ComprobrarTipoArgs(String[] argumentos) {
@@ -16,10 +15,7 @@ public class Args {
                 //No es un entero :(
             }
         }
-        if (c==argumentos.length) {
-            return true;//Si tenemos la longitud igual al contador los argumentos eran todos de tipo int
-        }
-        return false;// Sino devolvemos false
+        return c == argumentos.length;//Comprobamos si todos son enteros o no
     }
     //Con esto comprobamos que tipo de entero es, si negativo o positivo
     public static int ComprobrarTipoEntero(String[] argumentos,int n) {
