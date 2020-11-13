@@ -29,6 +29,26 @@ public class Args {
                 return 0;// Si por algun caso el metodo falla devolvemos 0
         }
     }
+    //Metodo para convertir un array de caracteres a array de enteros
+    public static int[] ConvertirInt(String[] argumentos) {
+        int[] conv=new int[argumentos.length];
+        for (int i=0;i!=conv.length;i++) {
+            conv[i]=Integer.parseInt(argumentos[i]);
+        }
+        return conv;
+    }
+    //Metodo para pintar una array
+    public static void PintarArray(int[] numeros) {
+        for (int a=0;a!=numeros.length;a++) {
+            System.out.print(numeros[a]);
+            if(a!=numeros.length-1){System.out.print(", ");}
+        }
+    }
+    //Metodo para ordenar una array
+    public static int[] Ordenar(int[] array) {
+        Arrays.sort(array);
+        return array;
+    }
     //Metodo para crear los rangos numericos para comprobarlos con el metodo de @ComprobarTipoEntero
     public enum RangoNumerico {
         ENTERO(0, 32000),
