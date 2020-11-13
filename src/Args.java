@@ -45,9 +45,8 @@ public class Args {
         }
     }
     //Metodo para ordenar una array
-    public static int[] Ordenar(int[] array) {
+    public static void Ordenar(int[] array) {
         Arrays.sort(array);
-        return array;
     }
     //Metodo para crear los rangos numericos para comprobarlos con el metodo de @ComprobarTipoEntero
     public enum RangoNumerico {
