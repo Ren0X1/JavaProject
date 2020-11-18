@@ -1,3 +1,4 @@
+import java.util.regex.*;
 public class Persona {
     //----------------------------------------
     //NOMBRE
@@ -37,19 +38,13 @@ public class Persona {
     private char sexo;//[H/M]
     public char getSexo() {return sexo;}
     public void setSexo(char s) {
-        actualizarSexo(s);
-        /*switch (s) {
-            case 'H':
-                actualizarSexo(s);
-            case 'h':
-                actualizarSexo(s);
-            case 'M':
-                actualizarSexo(s);
-            case 'm':
-                actualizarSexo(s);
-            default:
-                System.err.println("SEXO INVALIDO");
-        }*/
+        String d=Character.toString(s);
+        if (d.equals("M") || d.equals("m") || d.equals("H") || d.equals("h")) {
+            actualizarSexo(s);
+        }
+        else {
+            System.err.println("SEXO INVALIDO");
+        }
     }
     void actualizarSexo(char s) {this.sexo=s;}
     //----------------------------------------
@@ -57,19 +52,39 @@ public class Persona {
     private String nif;
     public String getNIF() {return nif.toUpperCase();}
     public void setNIF(String nif) {
-        this.nif=nif.toLowerCase();
+        if (validarNIF(nif)) {
+            actualizarNif(nif);
+        }
+        else {
+            System.err.println("EL NIF INTRODUCIDO NO ES VALIDO.");
+        }
     }
+    static boolean validarNIF(String nif) {
+        boolean correcto;
+        Pattern pattern = Pattern.compile("(\\d{1,8})([TRWAGMYFPDXBNJZSQVHLCKEtrwagmyfpdxbnjzsqvhlcke])");
+        Matcher matcher = pattern.matcher(nif);
+        if (matcher.matches()) {
+            String letra = matcher.group(2);
+            String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            int index = Integer.parseInt(matcher.group(1));
+            index = index % 23;
+            String reference = letras.substring(index, index + 1);
+            correcto = reference.equalsIgnoreCase(letra);
+        }
+        else {
+            correcto = false;
+        }
+        return correcto;
+    }
+    void actualizarNif(String x) {this.nif=x.toLowerCase();}
     //----------------------------------------
     //LOCALIDAD
     private String localidad;
     public String getLoc() {return localidad.toUpperCase();}
-    public void setLoc(String loc) {
-        this.localidad=loc.toLowerCase();
-    }
+    public void setLoc(String loc) {this.localidad=loc.toLowerCase();}
     //----------------------------------------
     //CENSO
     static int censo=0;
-    public int getCenso() {return censo;}
     //----------------------------------------
     //CONSTRUCTORES
     public Persona(String nombre, String apellido1, String apellido2, int edad, char sexo, String nif, String localidad) {
