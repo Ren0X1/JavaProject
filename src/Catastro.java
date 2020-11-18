@@ -1,9 +1,7 @@
-import java.sql.SQLOutput;
-
 public class Catastro {
     public static void main (String[] args) {
-        int op=1,x=0;
-        Persona p[]=new Persona[100];
+        int op,x=0;
+        Persona[] p=new Persona[100];
         do {
             System.out.println("-------------------------------");
             System.out.println(
@@ -38,8 +36,9 @@ public class Catastro {
                 case 3:
                     String nifbuscar=ES.leeDeTeclado("INTRODUCE NIF DE LA PERSONA A BUSCAR : ");
                     for (int i=0;i!=x;i++) {
-                        if (p[i].getNIF()==nifbuscar) {
+                        if (p[i].getNIF().equals(nifbuscar.toUpperCase())) {
                             System.out.print(p[i].getNombre()+", "+p[i].getApellido1()+", "+p[i].getApellido2()+", "+p[i].getEdad()+", "+p[i].getSexo()+", "+p[i].getNIF()+", "+p[i].getLoc());
+                            System.out.println();
                         }
                     }
                     continuar();
