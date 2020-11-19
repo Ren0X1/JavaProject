@@ -99,14 +99,14 @@ public class Persona {
     //TO STRING
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido1='" + apellido1 + '\'' +
-                ", apellido2='" + apellido2 + '\'' +
-                ", edad=" + edad +
-                ", sexo=" + sexo +
-                ", nif='" + nif + '\'' +
-                ", localidad='" + localidad + '\'' +
+        return "Persona {" +
+                "Nombre='" + nombre + '\'' +
+                ", PrimerApellido='" + apellido1 + '\'' +
+                ", SegundoApellido='" + apellido2 + '\'' +
+                ", Edad=" + edad +
+                ", Sexo=" + sexo +
+                ", NIF='" + nif + '\'' +
+                ", Localidad='" + localidad + '\'' +
                 '}';
     }
     //----------------------------------------

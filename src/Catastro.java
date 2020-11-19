@@ -28,7 +28,7 @@ public class Catastro {
                     continue;
                 case 2:
                     for (int i=0;i!=x;i++) {
-                        System.out.print(p[i].getNombre()+", "+p[i].getApellido1()+", "+p[i].getApellido2()+", "+p[i].getEdad()+", "+p[i].getSexo()+", "+p[i].getNIF()+", "+p[i].getLoc());
+                        System.out.print(p[i].toString());
                         System.out.println();
                     }
                     continuar();
@@ -37,7 +37,7 @@ public class Catastro {
                     String nifbuscar=ES.leeDeTeclado("INTRODUCE NIF DE LA PERSONA A BUSCAR : ");
                     for (int i=0;i!=x;i++) {
                         if (p[i].getNIF().equals(nifbuscar.toUpperCase())) {
-                            System.out.print(p[i].getNombre()+", "+p[i].getApellido1()+", "+p[i].getApellido2()+", "+p[i].getEdad()+", "+p[i].getSexo()+", "+p[i].getNIF()+", "+p[i].getLoc());
+                            System.out.print(p[i].toString());
                             System.out.println();
                         }
                     }
