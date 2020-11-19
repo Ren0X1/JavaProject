@@ -18,9 +18,7 @@ public class Persona {
     //APELLIDO2
     private String apellido2;
     public String getApellido2() {return apellido2.toUpperCase();}
-    public void setApellido2(String apellido) {
-        this.apellido2=apellido.toLowerCase();
-    }
+    public void setApellido2(String apellido) {this.apellido2=apellido.toLowerCase();}
     //----------------------------------------
     //EDAD
     private int edad;
@@ -96,6 +94,20 @@ public class Persona {
         setSexo(sexo);
         setNIF(nif);
         setLoc(localidad);
+    }
+    //----------------------------------------
+    //TO STRING
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", edad=" + edad +
+                ", sexo=" + sexo +
+                ", nif='" + nif + '\'' +
+                ", localidad='" + localidad + '\'' +
+                '}';
     }
     //----------------------------------------
 }
