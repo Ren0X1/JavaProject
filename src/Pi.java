@@ -1,7 +1,6 @@
 public class Pi {
-    final double Pi=3.141591;
     public static void main(String[] args) {
-        int opcionElegida=pintaMenu("Calcular Areas", "Triangulo", "Circulo", "Cilindro");
+        int opcionElegida=pintaMenu();
         switch (opcionElegida) {
             case 1:
                 float base, altura, area;
@@ -26,12 +25,12 @@ public class Pi {
                 break;
         }
     }
-    static int pintaMenu(String titulo, String op1, String op2, String op3) {
+    static int pintaMenu() {
         int opcion;
-        System.err.println("--"+titulo+"--");
-        System.out.println("1.-"+op1);
-        System.out.println("2.-"+op2);
-        System.out.println("3.-"+op3);
+        System.err.println("--"+ "Calcular Areas" +"--");
+        System.out.println("1.-"+ "Triangulo");
+        System.out.println("2.-"+ "Circulo");
+        System.out.println("3.-"+ "Cilindro");
         System.out.println("---------------");
         opcion=ES.leeN("Introduce la opcion: ");
         return opcion;

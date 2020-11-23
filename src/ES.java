@@ -91,4 +91,7 @@ public class ES {
         op= cadena.charAt(0);
         return op;
     }
+    public static void continuar() {
+        ES.leeDeTeclado("Pulsa \"ENTER\" para continuar...");
+    }
 }

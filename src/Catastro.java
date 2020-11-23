@@ -24,14 +24,14 @@ public class Catastro {
                     String localidad=ES.leeDeTeclado("INTRODUCE LOCALIDAD DE LA PERSONA "+x+" : ");
                     p[x]=new Persona(nom,ape1,ape2,e,sex,nif,localidad);
                     x++;
-                    continuar();
+                    ES.continuar();
                     continue;
                 case 2:
                     for (int i=0;i!=x;i++) {
                         System.out.print(p[i].toString());
                         System.out.println();
                     }
-                    continuar();
+                    ES.continuar();
                     continue;
                 case 3:
                     String nifbuscar=ES.leeDeTeclado("INTRODUCE NIF DE LA PERSONA A BUSCAR : ");
@@ -41,20 +41,17 @@ public class Catastro {
                             System.out.println();
                         }
                     }
-                    continuar();
+                    ES.continuar();
                     continue;
                 case 0:
                     op=0;
                     System.err.println("FIN DEL PROGRAMA!");
-                    continuar();
+                    ES.continuar();
                     continue;
                 default:
                     System.err.println("La intruccion elegida no existe en el programa!");
-                    continuar();
+                    ES.continuar();
             }
         } while (op!=0);
-    }
-    static void continuar() {
-        ES.leeDeTeclado("Pulsa \"ENTER\" para continuar...");
     }
 }

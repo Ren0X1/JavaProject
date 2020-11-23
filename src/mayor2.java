@@ -3,7 +3,7 @@ public class mayor2 {
         int n1, n2;
         n1=ES.leeN("Introduce el primer numero: ");
         n2=ES.leeN("Introduce el segundo numero: ");
-        int i=(n1>n2)?n1:n2;
+        int i=Math.max(n1, n2);
         System.out.println("El numero " + i +" es mayor!");
     }
 }

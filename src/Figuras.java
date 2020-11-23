@@ -2,7 +2,7 @@ public class Figuras {
     public static void main(String[] args) {
         char c;
         int n, j;
-        int opcionElegida = pintaMenu("Figuras", "Cuadrado", "Rectangulo","Triangulo", "Rombo");
+        int opcionElegida = pintaMenu();
         switch(opcionElegida) {
             case 1:
                 n=ES.leeN("Introduce las filas del cuadrado: ");
@@ -30,12 +30,12 @@ public class Figuras {
                 ES.debug(4);
         }
     }
-    static int pintaMenu(String titulo, String op1, String op2, String op3, String op4) {
-        System.err.println("--" + titulo + "--");
-        System.out.println("1.-" + op1);
-        System.out.println("2.-" + op2);
-        System.out.println("3.-" + op3);
-        System.out.println("4.-" + op4);
+    static int pintaMenu() {
+        System.err.println("--" + "Figuras" + "--");
+        System.out.println("1.-" + "Cuadrado");
+        System.out.println("2.-" + "Rectangulo");
+        System.out.println("3.-" + "Triangulo");
+        System.out.println("4.-" + "Rombo");
         System.out.println("---------------");
         return ES.leeN("Introduce la opcion: ");
     }
@@ -71,7 +71,6 @@ public class Figuras {
     }
     static void rombo(int n, char c) {
         int e=n-1,f=1;
-        int e1=n-1,f1=1;
         for (int i=0;i!=n;i++) {
             System.out.println();
             for (int k=0;k!=e;k++) {

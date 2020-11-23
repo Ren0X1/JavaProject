@@ -1,12 +1,11 @@
 public class ValidaNif {
     public static void main (String[] args) {
-        char[] letra;
         String letraNIF2 = "TRWAGMYFPDXBNJZSQVHLCKE";
         String respuesta;
-        boolean valido = false;
+        boolean valido;
         do {
             respuesta = ES.leeDeTeclado("Introduce NIF: ");
-            valido = respuesta.matches("[0-9]{8}[A-Z]{1}");
+            valido = respuesta.matches("[0-9]{8}[A-Z]");
 
             if (!valido) {
                 System.err.println("Falta la LETRA");
@@ -27,7 +26,7 @@ public class ValidaNif {
         int resul = Matematicas.resto(n,23);
         char letra = ' ';
         for (int i=0;i!=21; i++) {
-            letra = (char) x.charAt(resul);
+            letra = x.charAt(resul);
         }
         return letra;
     }

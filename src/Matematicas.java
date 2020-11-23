@@ -1,7 +1,7 @@
 public class Matematicas {
     //Mayor de 2 numeros
     public static int mayor2(int n1, int n2) {
-        return (n1>n2)?n1:n2;
+        return Math.max(n1, n2);
     }
     //Mayor de 3 numeros
     public static int mayor3(int n1, int n2, int n3) {
@@ -9,12 +9,7 @@ public class Matematicas {
         if (n1>n2 && n1>n3) {
             n=n1;
         }
-        else if (n2>n3) {
-            n=n2;
-        }
-        else {
-            n=n3;
-        }
+        else n = Math.max(n2, n3);
         return n;
     }
     //Hacemos la potencia de un numero

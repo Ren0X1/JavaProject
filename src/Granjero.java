@@ -37,14 +37,9 @@ public class Granjero {
                                 pintar("-------------------------------", true);
                                 switch (x) {
                                     case 1:
-                                        if (lobo) {
-                                            lobo=false;
-                                            pintar("El lobo ha vuelto al otro lado", true);
-                                            x=0;
-                                        }
-                                        else {
-                                            pintar("El lobo no esta en ese lado..." , false);
-                                        }
+                                        lobo=false;
+                                        pintar("El lobo ha vuelto al otro lado", true);
+                                        x=0;
                                         continuar();
                                         continue;
                                     case 2:
@@ -112,14 +107,9 @@ public class Granjero {
                                         continuar();
                                         continue;
                                     case 2:
-                                        if (oveja) {
-                                            oveja=false;
-                                            pintar("La oveja ha vuelto al otro lado", true);
-                                            x=0;
-                                        }
-                                        else {
-                                            pintar("La oveja no esta en ese lado..." , false);
-                                        }
+                                        oveja=false;
+                                        pintar("La oveja ha vuelto al otro lado", true);
+                                        x=0;
                                         continuar();
                                         continue;
                                     case 3:
@@ -187,14 +177,9 @@ public class Granjero {
                                         continuar();
                                         continue;
                                     case 3:
-                                        if (col) {
-                                            col=false;
-                                            pintar("La col ha vuelto al otro lado", true);
-                                            x=0;
-                                        }
-                                        else {
-                                            pintar("La col no esta en ese lado..." , false);
-                                        }
+                                        col=false;
+                                        pintar("La col ha vuelto al otro lado", true);
+                                        x=0;
                                         continuar();
                                         continue;
                                     case 0:

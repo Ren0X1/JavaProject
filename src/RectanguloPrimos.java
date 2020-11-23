@@ -6,7 +6,7 @@ public class RectanguloPrimos {
         for (int k=0;k!=n;k++) {
             for (int j=0;j!=m;j++) {
                 do {
-                    a=(int)aleatorio(10,90);
+                    a=(int)aleatorio();
                 } while (!esPrimo(a));
                 numeros[k][j]=a;
             }
@@ -16,8 +16,8 @@ public class RectanguloPrimos {
             if (p%2==0) {
                 for (int i=0;i!=m;i++) {
                     x=numeros[p][i];
-                    ma=(x>ma)?x:ma;
-                    me=(x<me)?x:me;
+                    ma= Math.max(x, ma);
+                    me= Math.min(x, me);
                     med=med+x;
                 }
                 System.out.println("Fila Numero: "+p);
@@ -38,8 +38,8 @@ public class RectanguloPrimos {
             System.out.println();
         }
     }
-    static double aleatorio(int min,int max) {
-        return min+Math.floor(Math.random()*max+1);
+    static double aleatorio() {
+        return 10 +Math.floor(Math.random()* 90 +1);
     }
     static boolean esPrimo(int e) {
         if (e==1 || e==0) {
