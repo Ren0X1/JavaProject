@@ -38,20 +38,19 @@ public class Persona {
     public void setSexo(char s) {
         String d=Character.toString(s);
         if (d.equals("M") || d.equals("m") || d.equals("H") || d.equals("h")) {
-            actualizarSexo(s);
+            this.sexo=s;
         }
         else {
             System.err.println("SEXO INVALIDO");
         }
     }
-    void actualizarSexo(char s) {this.sexo=s;}
     //----------------------------------------
     //NIF
     private String nif;
     public String getNIF() {return nif.toUpperCase();}
-    public void setNIF(String nif) {
-        if (validarNIF(nif)) {
-            actualizarNif(nif);
+    public void setNIF(String x) {
+        if (validarNIF(x)) {
+            this.nif=x.toLowerCase();
         }
         else {
             System.err.println("EL NIF INTRODUCIDO NO ES VALIDO.");
@@ -74,7 +73,6 @@ public class Persona {
         }
         return correcto;
     }
-    void actualizarNif(String x) {this.nif=x.toLowerCase();}
     //----------------------------------------
     //LOCALIDAD
     private String localidad;
@@ -110,4 +108,5 @@ public class Persona {
                 '}';
     }
     //----------------------------------------
+
 }
