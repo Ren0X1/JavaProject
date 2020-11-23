@@ -53,17 +53,12 @@ public class Args {
         ENTERO(0, 32000),
         NEGATIVO(-32000, -1),
         OTRO(0, -1);
-        private final int minValue;
-        private final int maxValue;
+        private final int minimo;
+        private final int maximo;
         RangoNumerico(int min, int max) {
-            this.minValue = min;
-            this.maxValue = max;
+            this.minimo = min;
+            this.maximo = max;
         }
-        public static RangoNumerico from(int score) {
-            return Arrays.stream(RangoNumerico.values())
-                    .filter(range -> score >= range.minValue && score <= range.maxValue)
-                    .findAny()
-                    .orElse(OTRO);
-        }
+        public static RangoNumerico from(int numero) {return Arrays.stream(RangoNumerico.values()).filter(range -> numero >= range.minimo && numero <= range.maximo).findAny().orElse(OTRO);}
     }
 }
