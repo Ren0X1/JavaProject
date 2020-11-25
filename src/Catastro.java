@@ -8,7 +8,6 @@ public class Catastro {
                     "1.- Añadir una persona\n"+
                             "2.- Lista de personas\n"+
                             "3.- Buscar una persona\n"+
-                            /*"4.- Determinar tipo de clase\n"+*/
                             "0.- Salir\n"
                     );
             System.out.println("-------------------------------");
@@ -44,11 +43,6 @@ public class Catastro {
                     }
                     ES.continuar();
                     continue;
-                /*case 4:
-                    Object clase=ES.leeDeTeclado("Introduce la clase: ");
-                    determinaClase(clase);
-                    ES.continuar();
-                    continue;*/
                 case 0:
                     op=0;
                     System.err.println("FIN DEL PROGRAMA!");
@@ -60,7 +54,4 @@ public class Catastro {
             }
         } while (op!=0);
     }
-    /*static void determinaClase(Object x) {
-        System.out.println(x.getClass().toString());
-    }*/
 }
