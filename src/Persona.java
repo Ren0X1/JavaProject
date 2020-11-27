@@ -23,37 +23,40 @@ public class Persona {
     //EDAD
     private int edad;
     public int getEdad() {return edad;}
-    public void setEdad(int edad1) {
+    public void setEdad(int edad) {this.edad = edad;}
+    int compruebaedad(int edad1) {
         if (edad1>0) {
-            this.edad=edad1;
+            return edad1;
         }
         else {
-            System.err.println("EDAD INVALIDA");
+            return -1;
         }
     }
     //----------------------------------------
     //SEXO
     private char sexo;//[H/M]
     public char getSexo() {return sexo;}
-    public void setSexo(char s) {
+    public void setSexo(char sexo) {this.sexo = sexo;}
+    char compruebasexo(char s) {
         String d=Character.toString(s);
         if (d.equals("M") || d.equals("m") || d.equals("H") || d.equals("h")) {
-            this.sexo=s;
+            return s;
         }
         else {
-            System.err.println("SEXO INVALIDO");
+            return 'X';
         }
     }
     //----------------------------------------
     //NIF
     private String nif;
     public String getNIF() {return nif.toUpperCase();}
-    public void setNIF(String x) {
+    public void setNif(String nif) { this.nif = nif.toLowerCase(); }
+    String compruebanif(String x) {
         if (validarNIF(x)) {
-            this.nif=x.toLowerCase();
+            return x;
         }
         else {
-            System.err.println("EL NIF INTRODUCIDO NO ES VALIDO.");
+            return "NIF INVALIDDO INTRODUCIDO";
         }
     }
     static boolean validarNIF(String nif) {
@@ -84,14 +87,13 @@ public class Persona {
     //----------------------------------------
     //CONSTRUCTORES
     public Persona(String nombre, String apellido1, String apellido2, int edad, char sexo, String nif, String localidad) {
-        censo++;
-        setNombre(nombre);
-        setApellido1(apellido1);
-        setApellido2(apellido2);
-        setEdad(edad);
-        setSexo(sexo);
-        setNIF(nif);
-        setLoc(localidad);
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.edad = compruebaedad(edad);
+        this.sexo = compruebasexo(sexo);
+        this.nif = compruebanif(nif);
+        this.localidad = localidad;
     }
     //----------------------------------------
     //TO STRING
