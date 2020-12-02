@@ -10,12 +10,12 @@ public class Empresa {
         do {
             System.out.println("-------------------------------");
             System.out.println(
-                    "1.- Añadir un Directivo\n" +
-                            "2.- Añadir un Empleado\n" +
-                            "3.- Añadir un Cliente\n" +
-                            "4.- Generar listado de Directivos/Empleados/Clientes\n" +
-                            "5.- Convertir un empleado en directivo\n" +
-                            "0.- Salir\n"
+	    		"1.- Añadir un Directivo\n" +
+	            "2.- Añadir un Empleado\n" +
+	            "3.- Añadir un Cliente\n" +
+	            "4.- Generar listado de Directivos/Empleados/Clientes\n" +
+	            "5.- Convertir un empleado en directivo\n" +
+	            "0.- Salir\n"
             );
             System.out.println("-------------------------------");
             op = ES.leeN("Introduce una opcion: ");
