@@ -1,4 +1,4 @@
-import java.util.*;//Importamos todo el java util ya qu es una clase de utilidad
+import java.util.*;//Importamos todo el java util ya que es una clase de utilidad
 public class Args {
     //Metodo para comprobar los numeros de parametros, el maximo s lo pasamos por parametro
     public static boolean ComprobrarLongitud(String[] argumentos,int n) {
