@@ -6,8 +6,8 @@ public class Apuesta {
         char[] letras=new char[3];
         apuesta(n,numeros,reintegro,letras);
     }
-    static double aleatorio(int min,int max) {
-        return min+Math.floor(Math.random()*max+1);
+    static double aleatorio(int min, int max) {
+        return min+Math.floor(Math.random()*(max-min)+1);
     }
     static void PintarArray(int[] numeros) {
         for (int a=0;a!=numeros.length;a++) {
@@ -32,7 +32,7 @@ public class Apuesta {
         int x=0,j;
         for (int i=0;i!=numeros.length;i++) {
             do {
-                j=(int)aleatorio(10,89);
+                j=(int)aleatorio(10,99);
             } while (compruebaRepetidos(numeros,x,j));
             numeros[i]=j;
             x++;
@@ -48,7 +48,7 @@ public class Apuesta {
     static void letras(char[] letras){
         char j;
         for (int i=0;i!=letras.length;i++) {
-            j=(char)aleatorio(65,25);
+            j=(char)aleatorio(65,90);
             letras[i]=j;
         }
     }
@@ -64,11 +64,11 @@ public class Apuesta {
             PintarArray(reintegro);
             System.out.println();
             System.out.println("Codigo N "+(k+1)+" : ");
-            System.out.print(Math.round(aleatorio(100,899)));
+            System.out.print(Math.round(aleatorio(100,999)));
             System.out.print("-");
             PintarCaracteres(letras);
             System.out.print("-");
-            System.out.print(Math.round(aleatorio(10000,89999)));
+            System.out.print(Math.round(aleatorio(10000,99999)));
             System.out.println();
             System.out.println();
         }
