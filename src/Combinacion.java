@@ -1,5 +1,5 @@
 public class Combinacion {
-    static double aleatorio(int n) {
+    public static double aleatorio(int n) {
         int min,max;
         switch (n) {
             case 1:
@@ -24,10 +24,20 @@ public class Combinacion {
         }
         return min+Math.floor(Math.random()*(max-min)+1);
     }
-    static int[] GenerarApuesta(int longitud, int numeros) {
+    public static double aleatorio(int min, int max) {
+        return min+Math.floor(Math.random()*(max-min)+1);
+    }
+    public static int[] GenerarApuesta(int longitud, int numeros) {
         int[] apuesta=new int[longitud];
         for (int i=0;i!= apuesta.length;i++) {
             apuesta[i]=(int)aleatorio(numeros);
+        }
+        return apuesta;
+    }
+    public static int[] GenerarApuesta(int longitud, int min,int max) {
+        int[] apuesta=new int[longitud];
+        for (int i=0;i!= apuesta.length;i++) {
+            apuesta[i]=(int)aleatorio(min,max);
         }
         return apuesta;
     }
