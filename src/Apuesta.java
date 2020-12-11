@@ -15,9 +15,9 @@ public class Apuesta {
             if(a!=numeros.length-1){System.out.print(", ");}
         }
     }
-    static void PintarCaracteres(char[] numeros) {
-        for (int a=0;a!=numeros.length;a++) {
-            System.out.print(numeros[a]);
+    static void PintarCaracteres(char[] caracteres) {
+        for (int a=0;a!=caracteres.length;a++) {
+            System.out.print(caracteres[a]);
         }
     }
     static boolean compruebaRepetidos(int[] numeros,int x,int generado) {
