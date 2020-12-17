@@ -1,5 +1,4 @@
 import java.util.Objects;
-
 public class Fracciones {
     private int numerador;
     private int denominador;
@@ -67,6 +66,9 @@ public class Fracciones {
         if (o == null || getClass() != o.getClass()) return false;
         Fracciones that = (Fracciones) o;
         return numerador == that.numerador && denominador == that.denominador;
+    }
+    public boolean FraccionesEquivalentes(Fracciones f1, Fracciones f2) {
+        return (f1.numerador*f2.denominador)==(f1.denominador*f2.numerador);
     }
     //HASHCODE
     @Override
