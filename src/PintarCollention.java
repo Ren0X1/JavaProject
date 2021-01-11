@@ -2,7 +2,7 @@ import java.util.*;
 public class PintarCollention {
     static void ListarLista(Collection lista) {
         System.out.println("Listado un: "+lista.getClass()+"....");
-        lista.forEach((elemento)->System.out.println(elemento));
+        lista.forEach(System.out::println);
     }
     static void ListarLista(List lista, int x) {
         System.out.println("Listado: "+lista.getClass().getSimpleName()+".");
@@ -14,7 +14,7 @@ public class PintarCollention {
             }
         }
         else {
-            lista.forEach((elemento)->System.out.println(elemento));
+            lista.forEach(System.out::println);
         }
     }
 }
