@@ -44,7 +44,8 @@ public class Empresa {
                 case 5:
                     int j= ES.leeN("Introduce el Nº de empleado a convertir: ");
                     String grupoTrabajo= ES.leeDeTeclado("Introduce el grupo de trabajo para el nuevo directivo: ");
-                    directivos[x]=new Directivos(empleados[j].getNombre(),empleados[j].getEdad(),empleados[j].getSueldo(),grupoTrabajo);
+                    String nif= ES.leeDeTeclado("Introduce el nif del nuevo Directivo: ");
+                    directivos[x]=new Directivos(empleados[j].getNombre(),empleados[j].getEdad(),empleados[j].getSueldo(),grupoTrabajo, nif);
                     x++;
                     ES.continuar();
                     continue;
@@ -62,20 +63,23 @@ public class Empresa {
         String nombre= ES.leeDeTeclado("Introduce el nombre del Directivo "+x+" : ");
         int edad= ES.leeN("Introduce la edad del Directivo "+x+" : ");
         int sueldo= ES.leeN("Introduce el sueldo del Directivo "+x+" : ");
+        String nif= ES.leeDeTeclado("Introduce el nif del Directivo "+x+" : ");
         String grupo= ES.leeDeTeclado("Introduce el grupo de trabajo del Directivo "+x+" : ");
-        directivos[x]=new Directivos(nombre,edad,sueldo,grupo);
+        directivos[x]=new Directivos(nombre,edad,sueldo,grupo,nif);
     }
     static void crearEmpleado (Object[] empleados,int x) {
         String nombre= ES.leeDeTeclado("Introduce el nombre del Empleado "+x+" : ");
         int edad= ES.leeN("Introduce la edad del Empleado "+x+" : ");
+        String nif= ES.leeDeTeclado("Introduce el nif del Empleado "+x+" : ");
         int sueldo= ES.leeN("Introduce el sueldo del Empleado "+x+" : ");
-        empleados[x]=new Empleados(nombre,edad,sueldo);
+        empleados[x]=new Empleados(nombre,nif,edad,sueldo);
     }
     static void crearCliente (Object[] clientes,int x) {
         String nombre= ES.leeDeTeclado("Introduce el nombre del Cliente "+x+" : ");
+        String nif= ES.leeDeTeclado("Introduce el nif del Cliente "+x+" : ");
         int edad= ES.leeN("Introduce la edad del Cliente "+x+" : ");
         String tlf= ES.leeDeTeclado("Introduce el telefono del Cliente "+x+" : ");
-        clientes[x]=new Clientes(nombre,edad,tlf);
+        clientes[x]=new Clientes(nombre,edad,tlf,nif);
     }
     static void crearListado (Object[] directivos,Object[] empleados,Object[] clientes,int x,int x1,int x2) {
         System.out.println("DIRECTIVOS: ");

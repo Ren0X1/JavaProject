@@ -8,8 +8,8 @@ public class Directivos extends Empleados {
     public void setGrupoTrabajo(String grupoTrabajo) { this.grupoTrabajo = grupoTrabajo; }
     //-------------------
     //Constructores
-    public Directivos(String nombre, int edad, int sueldo, String grupoTrabajo) {
-        super(nombre, edad, sueldo);
+    public Directivos(String nombre, int edad, int sueldo, String grupoTrabajo, String nif) {
+        super(nombre, nif, edad, sueldo);
         this.grupoTrabajo = grupoTrabajo;
     }
     //-------------------
