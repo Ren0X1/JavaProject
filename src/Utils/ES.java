@@ -23,12 +23,15 @@ public class ES {
         System.out.println(mensaje);
         return leeDeTeclado();
     }
+
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_YELLOW = "\u001B[33m";
+
     public static void debug(int x) {
         System.out.println(ANSI_YELLOW+"Debug Nº: "+ANSI_RED+x+ANSI_RESET);
     }
+
     public static double leeNR() {
         while(true) {
             try {
