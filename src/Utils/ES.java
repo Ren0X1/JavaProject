@@ -28,8 +28,13 @@ public class ES {
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_YELLOW = "\u001B[33m";
 
-    public static void debug(int x) {
-        System.out.println(ANSI_YELLOW+"Debug Nº: "+ANSI_RED+x+ANSI_RESET);
+    public static void debug(String x) {
+        try {
+            int n=Integer.parseInt(x);
+            System.out.println(ANSI_YELLOW+"Debug Nº: "+ANSI_RED+n+ANSI_RESET);
+        } catch (NumberFormatException e) {
+            System.err.println("PARAR QUE EL DEBUG FUNCIONE TIENES QUE METER UN NUMERO ENTERO DE 0-32K");
+        }
     }
 
     public static double leeNR() {
