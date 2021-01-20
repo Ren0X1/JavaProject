@@ -1,4 +1,8 @@
 package Empresa;
+
+import java.util.Collection;
+import java.util.TreeSet;
+
 public class Empresa {
     public static void main (String[] args) {
         int op,x=0,x1=0,x2=0,i,i1,i2;
@@ -80,6 +84,26 @@ public class Empresa {
         int edad= ES.leeN("Introduce la edad del Cliente "+x+" : ");
         String tlf= ES.leeDeTeclado("Introduce el telefono del Cliente "+x+" : ");
         clientes[x]=new Clientes(nombre,edad,tlf,nif);
+    }
+    static Object listaEmpresas(Collection<Empresa> lista) {
+        System.out.println("Listado de empresas...");
+        int i=0;
+        Empresa emp=null;
+        TreeSet listaOrd=new TreeSet(lista);
+        while (i<1 || i>listaOrd.size()) {
+            i=1;
+            for (Empresa empresa : lista) {
+                System.out.println(i+".-"+empresa.getClass());
+                i++;
+            }
+            i=ES.leeN("Escribe el numero de la empresa: ");
+            if (i<1 || i>listaOrd.size()) {
+                System.out.println("No existe la empresa con ese numero.");
+                return null;
+            }
+
+        }
+        return null;
     }
     static void crearListado (Object[] directivos,Object[] empleados,Object[] clientes,int x,int x1,int x2) {
         System.out.println("DIRECTIVOS: ");
