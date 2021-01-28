@@ -37,15 +37,15 @@ public class Empresas21 {
                                 listaEmpresas.put(emp.getNombre(), emp);
                                 break;
                             case 2:
-                            emp=(Empresa)seleccionaDeColeccion(listaEmpresas.values());
-                            if(emp!=null){
-                                Empleado emple = Empleado.altaEmpleado();
-                                emp.getListaEmpelados().put(emple.getNif(), emple);
-                            }
-                            else {
-                                System.out.println("Alta de empleado cancelada por el usuario");
-                            }
-                            break;
+                                emp=(Empresa)seleccionaDeColeccion(listaEmpresas.values());
+                                if(emp!=null){
+                                    Empleado emple = Empleado.altaEmpleado();
+                                    emp.getListaEmpelados().put(emple.getNif(), emple);
+                                }
+                                else {
+                                    System.out.println("Alta de empleado cancelada por el usuario");
+                                }
+                                break;
                             case 3:
                                 System.out.println("Alta de Cliente...");
                                 Cliente cli = Cliente.altaCliente();
