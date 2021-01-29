@@ -1,4 +1,7 @@
 package Empresa2;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -142,5 +145,13 @@ public class Empresas21 {
             }
         }
         return listaEmpre.get(i-1);
+    }
+
+    public void guardarClientesLista(String NombreArchivo, String Texto)
+        throws IOException {
+            FileWriter fileWriter = new FileWriter(NombreArchivo);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            printWriter.printf(Texto);
+            printWriter.close();
     }
 }
