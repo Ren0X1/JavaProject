@@ -9,7 +9,6 @@ public class Empresas21 {
     public static void main(String[] args) {
         int opcion,opcionMa,opcionLi;
         Empresa emp;
-        
         do{
             System.out.println("------MENÚ PRINCIPAL-------\n"+
             "\t1.-Menú Altas.........\n"+
@@ -65,9 +64,9 @@ public class Empresas21 {
                                 }
                                 else System.out.println("operacion cancelada por el usuario");
                                 break;
-                    }
-                } while(opcionMa!=0);
-                break;
+                        }
+                    } while(opcionMa!=0);
+                    break;
                 case 2://Menu Listado
                     do{
                         System.out.println("------MENÚ Listados -------\n"+
