@@ -1,4 +1,8 @@
 package Empresa2;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -141,5 +145,19 @@ public class Empresas21 {
             }
         }
         return listaEmpre.get(i-1);
+    }
+
+    public void guardarClientesFichero(TreeSet <Cliente> listaClientes) {
+        try {
+            FileWriter fw = new FileWriter("src\\ficheros\\ListaClientes.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter fichero = new PrintWriter(bw);
+            for(Cliente cl:listaClientes) {
+                fichero.println(cl.getNif()+":"+cl.getNombre()+":"+cl.getApellido1()+":"+cl.getApellido2()+":"+cl.getEdad()+":"+cl.getTelefono()+".");
+            }
+            fichero.close();
+        } catch (IOException e) {
+            System.out.println("Error al guardar los clientes en el fichero:  "+e.getMessage());
+        }
     }
 }
