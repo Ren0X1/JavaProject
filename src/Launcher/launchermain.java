@@ -4,7 +4,7 @@ import java.io.IOException;
 public class launchermain {
     public static void main(String[] args) {
         JFrame f=new JFrame("Launcher");
-        JButton b=new JButton("Prueba");
+        JButton b=new JButton("Localhost");
         b.setBounds(140,12,95,30);
         f.add(b);
         f.setSize(400,100);
@@ -12,7 +12,7 @@ public class launchermain {
         f.setVisible(true);
         b.addActionListener(e -> {
             try {
-                Ejecutar("fivem.exe", "fivem://connect/localhost");
+                Ejecutar("FiveM.exe", "fivem://connect/localhost"); /*C:\Users\alex-\Downloads\FiveM\*/
             } catch (IOException ioException) {
                 System.out.println("Error al ejecutar");
             }
