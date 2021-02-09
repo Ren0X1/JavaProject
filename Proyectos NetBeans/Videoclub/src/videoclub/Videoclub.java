@@ -1,21 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package videoclub;
 
-/**
- *
- * @author alex-
- */
-public class Videoclub {
+import java.util.Map;
+import java.util.TreeMap;
 
-    /**
-     * @param args the command line arguments
-     */
+public class Videoclub {
+    
+    static TreeMap<String,Persona> ClientesOrdenados= new TreeMap();
+    static TreeMap<String,Peliculas> PeliculasOrdenadas= new TreeMap();
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+    }
+    
+    private static void listarClientes(Map<String,Persona> mapa) {
+        
+    }
+    
+    private static void listarPeliculas(Map<String,Peliculas> mapa) {
+        
     }
     
 }

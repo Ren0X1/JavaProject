@@ -3,14 +3,14 @@ package videoclub;
 import java.util.Comparator;
 import java.util.Objects;
 public  class Persona implements Comparable<Persona>{
-    private char sexo;
-    private String nombre;
-    private String apellido1;
-    private String apellido2;
-    private String nif;
-    private int edad;
-    private String localidad;
-    private static int censo;
+    protected char sexo;
+    protected String nombre;
+    protected String apellido1;
+    protected String apellido2;
+    protected String nif;
+    protected int edad;
+    protected String localidad;
+    protected static int censo;
     public Persona(){
     censo++;
     }
