@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ConectaDB {
 
@@ -19,7 +17,8 @@ public class ConectaDB {
         Connection conn=null;
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            conn=DriverManager.getConnection("jdbc:oracle:system@localhost:1521:xe","system","system");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
+            //conn=DriverManager.getConnection("jdbc:mysql:thin:@localhost:3306:xe","root","");
         } catch(SQLException ex) {
             System.err.println("Error al conectar: "+ex.getMessage());
         }
