@@ -18,7 +18,6 @@ public class ConectaDB {
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
-            //conn=DriverManager.getConnection("jdbc:mysql:thin:@localhost:3306:xe","root","");
         } catch(SQLException ex) {
             System.err.println("Error al conectar: "+ex.getMessage());
         }
@@ -48,6 +47,25 @@ public class ConectaDB {
             }
         }
         return numFilas;
+    }
+    
+    private static boolean insertarDatos(String sentencia, Connection conn) {
+        Statement stm=null;
+        try {
+            stm=conn.createStatement(); 
+            stm.execute(sentencia);
+            return true;
+        } catch(SQLException ex) {
+            System.err.println("Error al conectar: "+ex.getMessage());
+            return false;
+        } finally {
+            try {
+                stm.close();
+            } catch (SQLException ex) {
+                System.err.println("Error cerrando la conexion: "+ex.getMessage());
+                return false;
+            }
+        }
     }
     
 }
