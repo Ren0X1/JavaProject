@@ -1,0 +1,6 @@
+Macarrones con tomate,Se hierve con los macarrones y luego se le echa tomate por encima,Macarron,20/Tomate;
+Pollo asado,Se hornea un pollo en el horno(evidentemente) durante una hora y se sirve con una guarnicion de veduras,Pollo,11/Patata;Zanahoria;
+Melocoton en almíbar,Se sirve el melocoton en un cuenco con salsa de almíbar,Melocoton,3/
+PrimerPlato,hola,ingrediente1,10.5/ingrediente2;
+SegundoPlato,adios,ingrediente3,4.75/
+postre,buenas,ingrediente4,1.2/ingrediente3;

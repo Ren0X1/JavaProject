@@ -1,0 +1,2 @@
+nombre,origen,preciokilo/caloria:valor/grasa:valor/noseque:valor
+Macarron,ronda,1/Caloria:200/Grasa:20/Hidratos de carbono:500/

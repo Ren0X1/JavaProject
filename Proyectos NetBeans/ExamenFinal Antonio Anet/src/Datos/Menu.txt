@@ -1,0 +1,2 @@
+pruebamenu,PrimerPlato,SegundoPlato,postre
+Estandar,Macarrones con tomate,Pollo asado,Melocoton en almíbar

@@ -1,0 +1,11 @@
+Macarron,Ronda,20/Caloria:200/Grasa:200/Hidratos de carbono:200/
+Tomate,Tomatera,2/Caloria:328/Grasa:36/
+Pollo,Malaga,3/Caloria:40/Grasa:400/Hidratos de carbono:20/
+Zanahoria,Sevilla,3/Caloria:200/Grasa:300/
+Patata,Arriate,4/Caloria:309/Grasa:123/
+Melocoton,huelva,1/Caloria:200/Grasa:10/
+ingrediente1,a,2/Caloria:300/Grasa:200/
+ingrediente2,b,3/Prueba:400/Caloria:200/Fibra:20/Grasa:300/
+ingrediente3,lora,3/Caloria:577/Grasa:3/
+ingrediente4,iou,2/Caloria:56/Grasa:123/
+ingrediente5,ourc,5/Caloria:321/Grasa:456/
