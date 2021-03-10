@@ -1,0 +1,104 @@
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (1, 'Álava');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (2, 'Castellón');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (3, 'León');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (4, 'Salamanca');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (5, 'Albacete');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (6, 'Ceuta');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (7, 'Lleida');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (8, 'Segovia');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (9, 'Alicante');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (10, 'Ciudad Real');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (11, 'Lugo');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (12, 'Sevilla');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (13, 'Almería');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (14, 'Córdoba');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (15, 'Madrid');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (16, 'Soria');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (17, 'Asturias');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (18, 'A Coruña');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (19, 'Málaga');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (20, 'Tarragona');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (21, 'Ávila');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (22, 'Cuenca');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (23, 'Melilla');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (24, 'S.C. Tenerife');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (25, 'Badajoz');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (26, 'Girona');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (27, 'Murcia');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (28, 'Teruel');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (29, 'Baleares');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (30, 'Granada');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (31, 'Navarra');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (32, 'Toledo');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (33, 'Barcelona');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (34, 'Guadalajara');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (35, 'Ourense');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (36, 'Valencia');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (37, 'Burgos');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (38, 'Guipúzcoa');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (39, 'Palencia');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (40, 'Valladolid');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (41, 'Cáceres');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (42, 'Huelva');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (43, 'Las Palmas');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (44, 'Vizcaya');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (45, 'Cádiz');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (46, 'Huesca');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (47, 'Pontevedra');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (48, 'Zamora');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (49, 'Cantabria');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (50, 'Jaén');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (51, 'La Rioja');
+insert into PROVINCIAS (IDPROVINCIA, PROVINCIA)
+values (52, 'Zaragoza');
