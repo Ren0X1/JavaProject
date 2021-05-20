@@ -1,21 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package sw_componentes_21;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.event.InputEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import javax.swing.*;
 
-public class Sw_Componentes_21 extends JFrame{
 
-    //JTabbedPane pestañas;
+/**
+ *
+ * @author Usuario
+ */
+public class Sw_Componentes_21 extends MiVentana21{
+
+    static JTabbedPane pestañas;
+    
     public Sw_Componentes_21(String title) throws HeadlessException {
         super(title);
-        this.setJMenuBar(creaMenu());
+        contenidoVentana(this);
+    }
+    
+    public Sw_Componentes_21(String title,int ancho, int alto) throws HeadlessException {
+        super(title,ancho,alto);
+        contenidoVentana(this);
+    }
+    
+    static void contenidoVentana(MiVentana21 ventana){   
         
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JTabbedPane pestañas= new JTabbedPane();
+        pestañas= new JTabbedPane();
         
         // Panel de los RadioButtons.............................
         pestañas.addTab("RadioButtons", creaPanelRadios());
@@ -30,17 +51,14 @@ public class Sw_Componentes_21 extends JFrame{
         pestañas.addTab("Etiqueta Imegen y Texto...",new ImageIcon("src/images/fix.gif") ,creaPanelEtiqueta());
         
         
-        add(pestañas,BorderLayout.CENTER);
-        add(creaBarraH(),BorderLayout.NORTH);
-        setVisible(true);
-        setBounds(200, 100, 600, 500);
+        ventana.add(pestañas,BorderLayout.CENTER);
+        ventana.add(creaBarraH(),BorderLayout.NORTH);
         
-    }
-
-    
-    
+     }
+ 
     public static void main(String[] args) {
         new Sw_Componentes_21("probando componentes....");
+        new Sw_Componentes_21("probando Mi VEntana....",400,300);
     }
     
     static JPanel creaPanelRadios(){
@@ -56,16 +74,22 @@ public class Sw_Componentes_21 extends JFrame{
         botones.setLayout(new BorderLayout());
             //Paneles intermedios......
             JPanel norte = new JPanel();
-            norte.setBorder(BorderFactory.createLineBorder(Color.red));
+            JPanel centro = new JPanel();
             
-            for(int i=1;i<4;i++)
-                norte.add(new JButton("botón "+i));
+            norte.setBorder(BorderFactory.createLineBorder(Color.red));
+            JButton boton1,boton2,boton3;
+            
+            boton1=new JButton("botón 1");
+            boton2=new JButton("botón 2");
+            boton3=new JButton("botón 3");
+            norte.add(boton1);norte.add(boton2);norte.add(boton3);
             
             botones.add(norte,BorderLayout.NORTH);
-            
+              //----Panel SUR ----------------------------------------
+              //------------------------------------------------------
             JPanel sur = new JPanel();
             sur.setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createLineBorder(Color.BLUE),"Diseño Botón"));
+                            BorderFactory.createLineBorder(Color.BLUE),"Diseño Botón"));
             botones.add(sur,BorderLayout.SOUTH);
             JButton icono, colorFondo, colorTexto;
             JTextField fichIcono;
@@ -73,18 +97,50 @@ public class Sw_Componentes_21 extends JFrame{
             sur.add(fichIcono= new JTextField("     "));
             sur.add(colorFondo = new JButton("colorFondo..."));
             sur.add(colorTexto = new JButton("colorTexto..."));
-                        
+            
+            JFileChooser ficheroIcono= new JFileChooser(new File("src/images"));
+            
+            icono.addActionListener((e) -> {
+                 int returnVal = ficheroIcono.showOpenDialog(null);
+                 
+                 if(returnVal == JFileChooser.APPROVE_OPTION){
+                    File fich= ficheroIcono.getSelectedFile();
+                    fichIcono.setText(fich.getName());
+                     System.out.println("file="+fich.getAbsolutePath());
+                 }
+                 
+            });
+            
+          //----Panel Este----------------------------------------              
             JPanel este = new JPanel();
+            
+            JCheckBox check1,check2,check3;
+            
             este.setLayout(new BoxLayout(este, BoxLayout.Y_AXIS));
             este.setBorder(BorderFactory.createLineBorder(Color.GREEN));
             botones.add(este,BorderLayout.EAST);
             
             este.add(Box.createVerticalGlue());
-            for(int i=1;i<4;i++)
-                este.add(new JCheckBox("botón "+i,true));
+            check1 =new JCheckBox("botón 1");
+            check2 =new JCheckBox("botón 2");
+            check3 =new JCheckBox("botón 3");
+            
+           /*check1.addItemListener(new EventoCheck());
+            check2.addItemListener(new EventoCheck());
+            check3.addItemListener(new EventoCheck());*/
+            check1.addItemListener((e) -> {
+                if(e.getStateChange()==ItemEvent.SELECTED )
+                       centro.add(boton1);
+                   else   
+                       norte.add(boton1);
+                centro.repaint();norte.repaint();
+                centro.validate();norte.validate();
+            });
+            
+            este.add(check1);este.add(check2);este.add(check3);
             
             este.add(Box.createVerticalGlue());
-            
+           //----Panel Este---------------------------------------- 
             JPanel oeste = new JPanel();
              oeste.setBorder(BorderFactory.createLineBorder(Color.PINK));
             botones.add(oeste,BorderLayout.WEST);
@@ -107,6 +163,12 @@ public class Sw_Componentes_21 extends JFrame{
             textoAncho.setMaximumSize(textoAncho.getPreferredSize());
             slidetAncho.add(textoAncho);
             
+            slaiderIz.addChangeListener((e) -> {
+                boton1.setSize(slaiderIz.getValue(), boton1.getHeight());
+                textoAncho.setText("-- "+slaiderIz.getValue()+" --");
+            });
+            
+            
             oeste.add(slidetAncho);
             
             JPanel slidetAlto= new JPanel();
@@ -126,9 +188,14 @@ public class Sw_Componentes_21 extends JFrame{
             textoAlto.setMaximumSize(textoAncho.getPreferredSize());
             slidetAlto.add(textoAlto);
             
+             slaiderD.addChangeListener((e) -> {
+                boton1.setSize( boton1.getWidth(),slaiderD.getValue());
+                textoAlto.setText("-- "+slaiderD.getValue()+" --");
+            });
+            
             oeste.add(slidetAlto);
             
-            JPanel centro = new JPanel();
+           
              centro.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
             botones.add(centro,BorderLayout.CENTER);
             return botones;
@@ -180,46 +247,7 @@ public class Sw_Componentes_21 extends JFrame{
         
         return pEtiqueta; 
     }
-    static JMenuBar creaMenu(){
-        
-        ButtonGroup aspectos =new  ButtonGroup();
-        
-        JMenuBar menuPrincipal= new JMenuBar();
-        JMenu look_feel = new JMenu("Look&feel");
-        JMenu archivo   = new JMenu("Archivo...");
-         menuPrincipal.add(archivo); menuPrincipal.add(look_feel);
-        
-        JMenuItem nuevo = new JMenuItem("Nuevo...");
-         JMenuItem abrir = new JMenuItem("Abrir...");
-         JMenuItem guardar = new JMenuItem("Guardar...");
-         
-         archivo.add(nuevo); archivo.add(abrir); archivo.add(guardar);
-         archivo.add(new JSeparator());
-         
-         JCheckBoxMenuItem flotar= new JCheckBoxMenuItem("Flotar BH");
-         archivo.add(flotar);
-         archivo.add(new JSeparator());
-        
-         JMenuItem salir = new JMenuItem("Salir");
-          archivo.add(salir);
-          
-          salir.setMnemonic(KeyEvent.VK_S);
-          salir.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,InputEvent.CTRL_MASK));
-          
-         JRadioButtonMenuItem metal,motif,windows,nimbus; 
-         metal = new JRadioButtonMenuItem("Metal (java)");
-         motif = new JRadioButtonMenuItem("Motif (Unix)");
-         windows = new JRadioButtonMenuItem("windows");
-         nimbus = new JRadioButtonMenuItem("Nimbus");
-         
-         look_feel.add(metal);look_feel.add(motif);
-         look_feel.add(windows);look_feel.add(nimbus);
-         
-         aspectos.add(metal); aspectos.add(motif);
-          aspectos.add(windows); aspectos.add(nimbus);
-        
-        return menuPrincipal;
-    }
+   
     
     static JToolBar creaBarraH(){
         JToolBar Bh = new JToolBar(JToolBar.HORIZONTAL);
@@ -231,5 +259,38 @@ public class Sw_Componentes_21 extends JFrame{
         Bh.add(BNuevo); Bh.add(BAbrir); Bh.add(BCopiar);
         
         return Bh;
+    }
+
+    private static class EventoCheck implements ItemListener {
+
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+           String texto=((JCheckBox)e.getSource()).getText();
+           
+           switch(texto){
+               
+               case "botón 1":
+                   //JOptionPane.showMessageDialog(null, "check en boton 1");
+                   System.out.println("check en boton 1");
+                   if(e.getStateChange()==ItemEvent.SELECTED )
+                       centro.add(boton1);
+                   else   
+                       norte.add(boton1);
+                   break;
+               case "botón 2":
+                  // JOptionPane.showMessageDialog(null, "check en boton 2");
+                    System.out.println("check en boton 2");
+                   break;
+               case "botón 3":
+                  // JOptionPane.showMessageDialog(null, "check en boton 3");
+                    System.out.println("check en boton 3");
+                   break;    
+               
+           }
+           
+           
+        }
+
+       
     }
 }
