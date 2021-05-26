@@ -1,0 +1,7 @@
+1;Eccleston,Murphy,Harris
+2;Jolie,Butler,Barrie
+3;Biggs,Nicholas,Thomas
+4;O'Connell,Anderson,Warren
+5;Carrey,Freeman,Aniston
+6;Banderas,Liu,Henry
+7;Tippi Hedren, Rod Taylor, Jessica Tandy, Suzanne Pleshette,Veronica Cartwright 
