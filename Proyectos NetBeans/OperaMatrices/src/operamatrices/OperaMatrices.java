@@ -1,19 +1,15 @@
 package operamatrices;
 
-import java.util.Arrays;
-
 public class OperaMatrices {
     public static void main(String[] args) {
         if (ComprobrarTipoArgs(args)) {
+            int[] Args=ConvertirInt(args);
             for(int l=0;l!=args.length;l++) {
-                int estado=ComprobrarTipoEntero(args,l);
-                if (estado!=1) {
+                if (Args[l]<0) {
                     System.err.println("LOS PARAMETROS INTRODUCIDOS NO SON NUMEROS POSITIVOS");
                     break;
                 }
             }
-            int[] Args=ConvertirInt(args);
-
             pintaM(generaM(Args[0],Args[1],Args[2],Args[3]));
         } else {
             System.err.println("LOS PARAMETROS INTRODUCIDOS NO SON ENTEROS");
@@ -62,30 +58,5 @@ public class OperaMatrices {
             conv[i]=Integer.parseInt(argumentos[i]);
         }
         return conv;
-    }
-    
-    private static int ComprobrarTipoEntero(String[] argumentos,int n) {
-        int i=Integer.parseInt(argumentos[n]);
-        switch (Args.RangoNumerico.from(i)) {
-            case ENTERO:
-                return 1;//Si es positivo devolvemos 1
-            case NEGATIVO:// Si es negativo devolvemos 2
-                return 2;
-            default:
-                return 0;// Si por algun caso el metodo falla devolvemos 0
-        }
-    }
-    
-    private enum RangoNumerico {
-        ENTERO(0, 32000),
-        NEGATIVO(-32000, -1),
-        OTRO(0, -1);
-        private final int minimo;
-        private final int maximo;
-        RangoNumerico(int min, int max) {
-            this.minimo = min;
-            this.maximo = max;
-        }
-        public static RangoNumerico from(int numero) {return Arrays.stream(RangoNumerico.values()).filter(range -> numero >= range.minimo && numero <= range.maximo).findAny().orElse(OTRO);}
     }
 }
