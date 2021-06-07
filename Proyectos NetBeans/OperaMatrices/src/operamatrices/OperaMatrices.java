@@ -2,17 +2,21 @@ package operamatrices;
 
 public class OperaMatrices {
     public static void main(String[] args) {
-        if (ComprobrarTipoArgs(args)) {
-            int[] Args=ConvertirInt(args);
-            for(int l=0;l!=args.length;l++) {
-                if (Args[l]<0) {
-                    System.err.println("LOS PARAMETROS INTRODUCIDOS NO SON NUMEROS POSITIVOS");
-                    break;
+        try {
+            if (ComprobrarTipoArgs(args)) {
+                int[] Args=ConvertirInt(args);
+                for(int l=0;l!=Args.length;l++) {
+                    if (Args[l]<0) {
+                        System.err.println("LOS PARAMETROS INTRODUCIDOS NO SON NUMEROS POSITIVOS");
+                        break;
+                    }
                 }
-            }
-            pintaM(generaM(Args[0],Args[1],Args[2],Args[3]));
-        } else {
-            System.err.println("LOS PARAMETROS INTRODUCIDOS NO SON ENTEROS");
+                pintaM(generaM(Args[0],Args[1],Args[2],Args[3]));
+            } else {
+                System.err.println("LOS PARAMETROS INTRODUCIDOS NO SON ENTEROS");
+            } 
+        } catch(Exception ex) {
+            System.err.println("ARGUMENTOS NO ENCONTRADOS");
         }
     }
     
