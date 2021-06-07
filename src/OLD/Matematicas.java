@@ -16,11 +16,8 @@ public class Matematicas {
     }
     //Hacemos la potencia de un numero
     public static int potencia(int n, int p) {
-        int c=1, i;
-        i=n;
-        while (c!=p) {
-            n=n*i;
-            c++;
+        for (int i=1;i==p;i++) {
+            n*=i
         }
         return n;
     }
