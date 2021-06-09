@@ -11,7 +11,11 @@ public class OperaMatrices {
                         break;
                     }
                 }
-                pintaM(generaM(Args[0],Args[1],Args[2],Args[3]));
+                if ((Math.max(Args[2],Args[3])-Math.min(Args[2],Args[3]))<(Args[0]*Args[1])) {
+                    System.err.println("LA DIFERENCIA DE NUMEROS MINIMO Y MAXIMO NO ES SUFICIENTE PARA GENRAR LA MATRIZ, DEBE SER MAYOR QUE LA MULTIPLICACION DE LAS FILAS Y COLUMNAS.");
+                } else {
+                    pintaM(generaM(Args[0],Args[1],Args[2],Args[3]));
+                }
             } else {
                 System.err.println("LOS PARAMETROS INTRODUCIDOS NO SON ENTEROS");
             } 
@@ -24,10 +28,25 @@ public class OperaMatrices {
         int[][] matriz = new int[filas][columnas];
         for (int i=0;i!=filas;i++) {
             for (int k=0;k!=columnas;k++) {
-                matriz[i][k]=aleatorio(minimo,maximo);
+                int n;
+                do {
+                    n=aleatorio(minimo,maximo);
+                } while(CompruebaRepetido(matriz,n));   
+                matriz[i][k]=n;
             }
         }
         return matriz;
+    }
+    
+    private static boolean CompruebaRepetido(int[][] x, int n) {
+        for (int i=0;i!=x.length;i++) {   
+            for (int k=0;k!=x[i].length;k++) {
+                if (n==x[i][k]) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     private static void pintaM(int[][] generaM) {
