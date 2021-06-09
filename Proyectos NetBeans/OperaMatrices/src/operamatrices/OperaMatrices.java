@@ -1,9 +1,5 @@
 package operamatrices;
 
-import java.io.File;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
 public class OperaMatrices {
     public static void main(String[] args) {
         try {
