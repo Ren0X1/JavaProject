@@ -18,12 +18,12 @@ public class OperaMatrices {
                 }
             } else {
                 System.err.println("LOS PARAMETROS INTRODUCIDOS NO SON ENTEROS");
-            } 
+            }
         } catch(Exception ex) {
             System.err.println("ARGUMENTOS NO ENCONTRADOS");
         }
     }
-    
+
     private static int[][] generaM(int filas, int columnas, int minimo, int maximo) {
         int[][] matriz = new int[filas][columnas];
         for (int i=0;i!=filas;i++) {
@@ -31,15 +31,15 @@ public class OperaMatrices {
                 int n;
                 do {
                     n=aleatorio(minimo,maximo);
-                } while(CompruebaRepetido(matriz,n));   
+                } while(CompruebaRepetido(matriz,n));
                 matriz[i][k]=n;
             }
         }
         return matriz;
     }
-    
+
     private static boolean CompruebaRepetido(int[][] x, int n) {
-        for (int i=0;i!=x.length;i++) {   
+        for (int i=0;i!=x.length;i++) {
             for (int k=0;k!=x[i].length;k++) {
                 if (n==x[i][k]) {
                     return true;
@@ -50,18 +50,18 @@ public class OperaMatrices {
     }
 
     private static void pintaM(int[][] generaM) {
-        for (int i=0;i!=generaM.length;i++) {   
+        for (int i=0;i!=generaM.length;i++) {
             for (int k=0;k!=generaM[i].length;k++) {
                 System.out.print(" "+generaM[i][k]);
             }
             System.out.println();
         }
     }
-    
+
     private static int aleatorio(int min, int max) {
         return (int)(min+Math.floor(Math.random()*(max-min)+1));
     }
-    
+
     private static boolean ComprobrarTipoArgs(String[] argumentos) {
         int c=0;
         for (int j=0;j!=argumentos.length;j++) {
@@ -74,7 +74,7 @@ public class OperaMatrices {
         }
         return c == argumentos.length;//Comprobamos si todos son enteros o no
     }
-    
+
     private static int[] ConvertirInt(String[] argumentos) {
         int[] conv=new int[argumentos.length];
         for (int i=0;i!=conv.length;i++) {
