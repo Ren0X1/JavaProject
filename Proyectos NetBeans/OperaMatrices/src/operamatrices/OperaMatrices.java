@@ -1,5 +1,9 @@
 package operamatrices;
 
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 public class OperaMatrices {
     public static void main(String[] args) {
         try {
@@ -24,7 +28,7 @@ public class OperaMatrices {
         }
     }
 
-    private static int[][] generaM(int filas, int columnas, int minimo, int maximo) {
+    public static int[][] generaM(int filas, int columnas, int minimo, int maximo) {
         int[][] matriz = new int[filas][columnas];
         for (int i=0;i!=filas;i++) {
             for (int k=0;k!=columnas;k++) {
@@ -82,4 +86,5 @@ public class OperaMatrices {
         }
         return conv;
     }
+    
 }
